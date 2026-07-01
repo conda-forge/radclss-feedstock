@@ -1,4 +1,4 @@
-{% set version = "2026.5.20" %}
+{% set version = "2026.7.1" %}
 
 package:
   name: radclss
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/r/radclss/radclss-{{ version }}.tar.gz
-  sha256: dfda9ecfc842eb108864444a0f879eb789a5b1b66521774e534d1968a55d37b8
+  sha256: 82f662130c949a6d6cd724bbde6e7f4eec0ea99d8e97c70c87eb1514cb86e670
 
 build:
   noarch: python
@@ -15,10 +15,10 @@ build:
 
 requirements:
   build:
-    - python 
+    - python
     - pip
   host:
-    - python {{ python_min }} 
+    - python {{ python_min }}
     - pip
     - setuptools
     - numpy <2.4.0
@@ -34,7 +34,7 @@ requirements:
     - boto3
     - xradar
     - dask
-    
+
 test:
   requires:
     - python {{ python_min }}

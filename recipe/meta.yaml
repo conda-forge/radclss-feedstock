@@ -1,4 +1,4 @@
-{% set version = "2026.7.1" %}
+{% set version = "2026.7.22" %}
 
 package:
   name: radclss
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/r/radclss/radclss-{{ version }}.tar.gz
-  sha256: 82f662130c949a6d6cd724bbde6e7f4eec0ea99d8e97c70c87eb1514cb86e670
+  sha256: 7419bd4fccbf3c55f03487062057f1c0e56ddb1a4ca3c94a46db9086f8f39441
 
 build:
   noarch: python

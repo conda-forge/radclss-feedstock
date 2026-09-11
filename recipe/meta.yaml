@@ -41,11 +41,15 @@ test:
     - pytest
     - arm_pyart
     - pip
+    - ca-certificates
   source_files:
     - tests/
   imports:
     - radclss
   commands:
+    # 1. On Linux & macOS: Point botocore to the correct Conda CA bundle path
+    - export AWS_CA_BUNDLE="${CONDA_PREFIX}/ssl/cacert.pem"       # [not win]
+    - export REQUESTS_CA_BUNDLE="${CONDA_PREFIX}/ssl/cacert.pem"   # [not win]
     - pytest tests/test_column_utils.py tests/test_config.py
 
 about:

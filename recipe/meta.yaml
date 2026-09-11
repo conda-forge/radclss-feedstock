@@ -1,4 +1,4 @@
-{% set version = "2026.7.22" %}
+{% set version = "2026.9.10" %}
 
 package:
   name: radclss
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/r/radclss/radclss-{{ version }}.tar.gz
-  sha256: 7419bd4fccbf3c55f03487062057f1c0e56ddb1a4ca3c94a46db9086f8f39441
+  sha256: 606471b069b663f131bf3a2a1c415a17ab6cf4378762001486359205ca7c44fc
 
 build:
   noarch: python
@@ -41,11 +41,15 @@ test:
     - pytest
     - arm_pyart
     - pip
+    - ca-certificates
   source_files:
     - tests/
   imports:
     - radclss
   commands:
+    # 1. On Linux & macOS: Point botocore to the correct Conda CA bundle path
+    - export AWS_CA_BUNDLE="${CONDA_PREFIX}/ssl/cacert.pem"       # [not win]
+    - export REQUESTS_CA_BUNDLE="${CONDA_PREFIX}/ssl/cacert.pem"   # [not win]
     - pytest tests/test_column_utils.py tests/test_config.py
 
 about:

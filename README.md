@@ -9,7 +9,7 @@ Package license: MIT
 
 Summary: Radar Columns and In Situ Sensors
 
-RADclss is a utility for developing vertical radar columns from CF/Radial compliant radar scans, co-located with ARM ground based instruments.
+RADclss is a utility for developing vertical columns from CF/Radial compliant radar scans, co-located with ARM ground based instruments.
 
 
 Current build status
